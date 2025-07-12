@@ -18,15 +18,25 @@ interface RecipeCardProps {
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ item }) => {
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card
+      sx={{
+        display: 'flex',
+        width: 700,           // Fixed width for all cards
+        minWidth: 400,        // Prevent shrinking below fixed width
+        maxWidth: 700,        // Prevent growing above fixed width
+        boxSizing: 'border-box',
+        p: 2,
+        m: 'auto',            // Center card in grid cell
+      }}
+    >
       <CardMedia
         component="img"
-        sx={{ width: 180, height: 130 }}
+        sx={{ width: 180, height: 130, borderRadius: 2, mr: 2 }}
         image={item.imageUrl}
         alt={item.title}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
+        <CardContent sx={{ flex: '1 0 auto', p: 0 }}>
           <Box display="flex" justifyContent="space-between" alignItems="center">
             <Typography component="div" variant="h6">
               {item.title}

@@ -25,7 +25,14 @@ const Sidebar: React.FC<SidebarProps> = ({
   setFilterFavorite,
 }) => {
   return (
-    <Box width={250} p={2} bgcolor="#f5f5f5" borderRight="1px solid #ddd">
+    <Box
+      width={250}
+      p={2}
+      sx={{
+        // bgcolor: '#f5f5f5', // Match the card background color
+        //borderRight: '1px solid #ddd',
+    }}
+    >
       <Typography variant="h6" gutterBottom>Sort by Title</Typography>
       <FormControl fullWidth size="small" margin="normal">
         <InputLabel>Select</InputLabel>
